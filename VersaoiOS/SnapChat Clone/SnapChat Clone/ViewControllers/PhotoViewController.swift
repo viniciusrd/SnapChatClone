@@ -120,7 +120,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                     }
                     else
                     {
-                        print("Failed")
+                        let alert = Alert(title: "Upload Falhou", message: "Erro ao salvar o arquivo, tente novamente!");
+                        self.present(alert.getAlert(), animated: true, completion: nil);
                         self.configButtonUpload(enable: true);
                     }
                 }

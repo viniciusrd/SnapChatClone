@@ -18,6 +18,7 @@
 		9805F70220F842EA00F51F50 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */; };
 		98E4F25C20FA707400BAA4B9 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */; };
 		98E4F25E20FA709900BAA4B9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */; };
+		98F9611020FADE1200A42C00 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F9610F20FADE1200A42C00 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		98F9610F20FADE1200A42C00 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		A1E32FD8FEE5C391A393105C /* Pods_SnapChat_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapChat_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F819B39088DF9A5EA278BA34 /* Pods-SnapChat Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat Clone.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapChat Clone/Pods-SnapChat Clone.release.xcconfig"; sourceTree = "<group>"; };
 		FA3971D6617076BF8C940B8C /* Pods-SnapChat Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat Clone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnapChat Clone/Pods-SnapChat Clone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,12 +81,9 @@
 		9805F6EA20F8394200F51F50 /* SnapChat Clone */ = {
 			isa = PBXGroup;
 			children = (
+				98F9610E20FADDC100A42C00 /* Model */,
+				98F9610D20FADD9800A42C00 /* ViewControllers */,
 				9805F6EB20F8394200F51F50 /* AppDelegate.swift */,
-				9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */,
-				9805F6ED20F8394200F51F50 /* ViewController.swift */,
-				9805F6FF20F842CF00F51F50 /* LoginViewController.swift */,
-				98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */,
-				98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */,
 				9805F6EF20F8394200F51F50 /* Main.storyboard */,
 				9805F6F220F8394300F51F50 /* Assets.xcassets */,
 				9805F6F420F8394300F51F50 /* LaunchScreen.storyboard */,
@@ -92,6 +91,26 @@
 				9805F6FD20F839F500F51F50 /* GoogleService-Info.plist */,
 			);
 			path = "SnapChat Clone";
+			sourceTree = "<group>";
+		};
+		98F9610D20FADD9800A42C00 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */,
+				9805F6ED20F8394200F51F50 /* ViewController.swift */,
+				9805F6FF20F842CF00F51F50 /* LoginViewController.swift */,
+				98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */,
+				98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		98F9610E20FADDC100A42C00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				98F9610F20FADE1200A42C00 /* Alert.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CC8874FBF530156357013FE5 /* Pods */ = {
@@ -228,6 +247,7 @@
 				9805F6EE20F8394200F51F50 /* ViewController.swift in Sources */,
 				9805F6EC20F8394200F51F50 /* AppDelegate.swift in Sources */,
 				98E4F25E20FA709900BAA4B9 /* PhotoViewController.swift in Sources */,
+				98F9611020FADE1200A42C00 /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
