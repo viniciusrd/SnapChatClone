@@ -112,28 +112,31 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             {
                 images.child("\(self.idImage).jpg").putData(imageData, metadata: nil)
                 {
-                    (metaData, error) in
+                    (metaData, errorPutData) in
                     
-                    if error == nil
+                    if errorPutData == nil
                     {
-                        let ref = Storage.storage().reference();
-                        ref.child("imagens").downloadURL(completion: { (url, erro) in
-                            if error == nil
+                        let imageRef = Storage.storage().reference(withPath: "imagens").child("\(self.idImage).jpg");
+                        imageRef.downloadURL(completion: { (url, errorGetUrl) in
+                            if errorGetUrl == nil
                             {
                                 
+                                if let urlFile = url?.absoluteString
+                                {
+                                    self.performSegue(withIdentifier: "selectUserSegue", sender: urlFile);
+                                    self.configButtonUpload(enable: true);
+                                    
+                                    //teste
+                                    print("URL: \(String(describing: urlFile))");
+                                    
+                                }
                                 
-                                let urlFile = url?.absoluteString;
-                                self.performSegue(withIdentifier: "selectUserSegue", sender: urlFile);
-                                self.configButtonUpload(enable: true);
-                                
-                                //teste
-                                print("URL: \(String(describing: urlFile))");
                             }
                             else
                             {
                                 let alert = Alert(title: "Falha", message: "Falha ao obter a URL do arquivo salvo, tente novamente!");
                                 self.present(alert.getAlert(), animated: true, completion: nil)
-                                print("Erro: \(error?.localizedDescription)");
+                                print("Erro: \(String(describing: errorGetUrl?.localizedDescription))");
                                 
                             }
                         })
@@ -166,6 +169,17 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                     }
                 }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "selectUserSegue"{
+            
+            let userViewController = segue.destination as! UsersViewController;
+            userViewController.descImage = self.textDesc.text!;
+            userViewController.urlImage = sender as! String;
+            userViewController.idImage = self.idImage;
+            
         }
     }
     

@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         let auth = Auth.auth();
         auth.addStateDidChangeListener { (auth, user) in
             
-            if let userLogged = user{
+            if let userLogged = user
+            {
                 self.performSegue(withIdentifier: "loginAutomaticSegue", sender: nil)
             }
         }

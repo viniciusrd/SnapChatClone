@@ -8,10 +8,14 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class UsersViewController: UITableViewController {
     
     var users: [User] = []
+    var urlImage = "";
+    var descImage = "";
+    var idImage = "";
     
     
     override func viewDidLoad() {
@@ -70,9 +74,47 @@ class UsersViewController: UITableViewController {
         // Configure the cell...
         let user = self.users[ indexPath.row ];
         cell.textLabel?.text = user.name;
+        cell.detailTextLabel?.text = user.email;
         
 
         return cell
+    }
+    
+    //selecionar a celula e recuperar o usuario
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let userSelect = self.users[ indexPath.row ];
+        let idUserSelect = userSelect.uid;
+        
+        let database = Database.database().reference();
+        let usersFirebase = database.child("usuarios");
+        let snaps = usersFirebase.child(idUserSelect).child("snaps");
+        
+        //consultar dados do usuario logado
+        let auth = Auth.auth();
+        if let idlUserLogged = auth.currentUser?.uid
+        {
+            
+            let userLogged = usersFirebase.child(idlUserLogged);
+            userLogged.observeSingleEvent(of: DataEventType.value)
+            { (snapshot) in
+                
+                let dataSnaphot = snapshot.value as? NSDictionary;
+                let snapConfig = [
+                    "from":dataSnaphot!["email"] as! String,
+                    "name":dataSnaphot!["name:"] as! String,
+                    "desc":self.descImage,
+                    "urlImage":self.urlImage,
+                    "idImage":self.idImage
+                ];
+                snaps.childByAutoId().setValue(snapConfig);
+            }
+            
+        }
+        
+        
+        
     }
    
 
