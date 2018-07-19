@@ -16,6 +16,8 @@
 		9805F6FE20F839F500F51F50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9805F6FD20F839F500F51F50 /* GoogleService-Info.plist */; };
 		9805F70020F842CF00F51F50 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805F6FF20F842CF00F51F50 /* LoginViewController.swift */; };
 		9805F70220F842EA00F51F50 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */; };
+		9821B1FF20FEBEA4004F5189 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B1FE20FEBEA4004F5189 /* UsersViewController.swift */; };
+		98808F742100090800D0402C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98808F732100090800D0402C /* User.swift */; };
 		98E4F25C20FA707400BAA4B9 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */; };
 		98E4F25E20FA709900BAA4B9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */; };
 		98F9611020FADE1200A42C00 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F9610F20FADE1200A42C00 /* Alert.swift */; };
@@ -32,6 +34,8 @@
 		9805F6FD20F839F500F51F50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9805F6FF20F842CF00F51F50 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		9821B1FE20FEBEA4004F5189 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		98808F732100090800D0402C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		98F9610F20FADE1200A42C00 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				9805F6FF20F842CF00F51F50 /* LoginViewController.swift */,
 				98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */,
 				98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */,
+				9821B1FE20FEBEA4004F5189 /* UsersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				98F9610F20FADE1200A42C00 /* Alert.swift */,
+				98808F732100090800D0402C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,7 +218,7 @@
 		};
 		C68E3845F7197F132080C8FE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -246,6 +252,8 @@
 				9805F70020F842CF00F51F50 /* LoginViewController.swift in Sources */,
 				9805F6EE20F8394200F51F50 /* ViewController.swift in Sources */,
 				9805F6EC20F8394200F51F50 /* AppDelegate.swift in Sources */,
+				98808F742100090800D0402C /* User.swift in Sources */,
+				9821B1FF20FEBEA4004F5189 /* UsersViewController.swift in Sources */,
 				98E4F25E20FA709900BAA4B9 /* PhotoViewController.swift in Sources */,
 				98F9611020FADE1200A42C00 /* Alert.swift in Sources */,
 			);

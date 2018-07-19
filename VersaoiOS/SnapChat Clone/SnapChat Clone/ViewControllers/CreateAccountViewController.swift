@@ -8,12 +8,14 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class CreateAccountViewController: UIViewController {
 
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var passwordConfirm: UITextField!
 
     override func viewDidLoad() {
@@ -49,65 +51,82 @@ class CreateAccountViewController: UIViewController {
         //Recuperar os dados digitados
         if let getEmail = self.email.text
         {
-            if let getPassword = self.password.text
+            if let getName = name.text
+                
             {
-                if let getPasswordConfirm = self.passwordConfirm.text
+                if let getPassword = self.password.text
                 {
-                    //validar senha
-                    if getPassword == getPasswordConfirm
+                    if let getPasswordConfirm = self.passwordConfirm.text
                     {
-                        let auth = Auth.auth();
-                        auth.createUser(withEmail: getEmail, password: getPassword) { (user, error) in
-                            
-                            if error == nil
-                            {
-                                if user == nil
-                                {
-                                    self.showMessage(title: "Erro ao Autenticar", message: "Ocorreu um erro ao realizar a autenticação do seu usuário, tente novamente!")
-                                }
-                                else
-                                {
-                                    //tudo ok redirecionar para a tela principal
-                                    self.performSegue(withIdentifier: "createAccountSegue", sender: nil);
-                                }
+                        //validar senha
+                        if getPassword == getPasswordConfirm
+                        {
+                            if getName != ""{
                                 
+                                let auth = Auth.auth();
+                                auth.createUser(withEmail: getEmail, password: getPassword) { (user, error) in
+                                    
+                                    if error == nil
+                                    {
+                                        if user == nil
+                                        {
+                                            self.showMessage(title: "Erro ao Autenticar", message: "Ocorreu um erro ao realizar a autenticação do seu usuário, tente novamente!")
+                                        }
+                                        else
+                                        {
+                                            let database = Database.database().reference();
+                                            let users = database.child("usuarios");
+                                            let getUser = user?.user;
+                                            let dataUser = ["name:":getName,"email":getEmail];
+                                            users.child( getUser!.uid ).setValue(dataUser);
+                                            
+                                            //tudo ok redirecionar para a tela principal
+                                            self.performSegue(withIdentifier: "createAccountSegue", sender: nil);
+                                        }
+                                        
+                                    }
+                                    else
+                                    {
+                                        let getError = error! as NSError;
+                                        var messageError = ""
+                                        if let codError = getError.userInfo["error_name"]{
+                                            let textError = codError as! String;
+                                            
+                                            switch textError {
+                                            case "EROR_INVALID_EMAIL":
+                                                messageError = "E=mail inválido, digite novamente!";
+                                                break;
+                                            case "ERROR_WEAK_PASSWORD":
+                                                messageError = "Senha deve ter no minimo 6 caracteres com letras e números, digite novamente!";
+                                                break;
+                                            case "ERROR_EMAIL_ALREADY_IN_USE":
+                                                messageError = "E-mail já utilizado por outro usuário, digite um novo e-mail!";
+                                                break;
+                                            default:
+                                                messageError = "Dados informados estão incorretos, confira seus dados e tente novamente!";
+                                            }
+                                            
+                                            self.showMessage(title: "Criação de Conta", message: messageError);
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
                             }
                             else
                             {
-                                let getError = error! as NSError;
-                                var messageError = ""
-                                if let codError = getError.userInfo["error_name"]{
-                                    let textError = codError as! String;
-                                
-                                    switch textError {
-                                    case "EROR_INVALID_EMAIL":
-                                        messageError = "E=mail inválido, digite novamente!";
-                                        break;
-                                    case "ERROR_WEAK_PASSWORD":
-                                        messageError = "Senha deve ter no minimo 6 caracteres com letras e números, digite novamente!";
-                                        break;
-                                    case "ERROR_EMAIL_ALREADY_IN_USE":
-                                        messageError = "E-mail já utilizado por outro usuário, digite um novo e-mail!";
-                                        break;
-                                    default:
-                                        messageError = "Dados informados estão incorretos, confira seus dados e tente novamente!";
-                                    }
-                                    
-                                    self.showMessage(title: "Criação de Conta", message: messageError);
-                
-                                }
-                
-                            }
-                            
+                                self.showMessage(title: "Dados Incorretos", message: "As senhas estão diferentes, digite novamente!")
+                            }//fim valida senha
+                        }
+                        else
+                        {
+                            self.showMessage(title: "Dados Incorretos", message: "Informe seu nome!")
                         }
                     }
-                    else
-                    {
-                        self.showMessage(title: "Dados Incorretos", message: "As senhas estão diferentes, digite novamente!")
-                    }//fim valida senha
-                    
                 }
             }
+            
         }
         
     }

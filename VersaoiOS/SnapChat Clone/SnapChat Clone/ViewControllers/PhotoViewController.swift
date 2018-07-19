@@ -110,13 +110,53 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             //converte a imagem
             if let imageData = UIImageJPEGRepresentation(imageSelected, 0.5)
             {
-                images.child("\(self.idImage).jpg").putData(imageData, metadata: nil) { (metaData, error) in
+                images.child("\(self.idImage).jpg").putData(imageData, metadata: nil)
+                {
+                    (metaData, error) in
                     
                     if error == nil
                     {
-                        print("Sucess")
-//                        print(metaData)
-                        self.configButtonUpload(enable: true);
+                        let ref = Storage.storage().reference();
+                        ref.child("imagens").downloadURL(completion: { (url, erro) in
+                            if error == nil
+                            {
+                                
+                                
+                                let urlFile = url?.absoluteString;
+                                self.performSegue(withIdentifier: "selectUserSegue", sender: urlFile);
+                                self.configButtonUpload(enable: true);
+                                
+                                //teste
+                                print("URL: \(String(describing: urlFile))");
+                            }
+                            else
+                            {
+                                let alert = Alert(title: "Falha", message: "Falha ao obter a URL do arquivo salvo, tente novamente!");
+                                self.present(alert.getAlert(), animated: true, completion: nil)
+                                print("Erro: \(error?.localizedDescription)");
+                                
+                            }
+                        })
+//                        images.downloadURL(completion: { (url, error) in
+//                            if error == nil
+//                            {
+//
+//
+//                                let urlFile = url?.absoluteString;
+//                                self.performSegue(withIdentifier: "selectUserSegue", sender: urlFile);
+//                                self.configButtonUpload(enable: true);
+//
+//                                //teste
+//                                print("URL: \(String(describing: urlFile))");
+//                            }
+//                            else
+//                            {
+//                                let alert = Alert(title: "Falha", message: "Falha ao obter a URL do arquivo salvo, tente novamente!");
+//                                self.present(alert.getAlert(), animated: true, completion: nil)
+//                                print("Erro: \(error?.localizedDescription)");
+//
+//                            }
+//                        })
                     }
                     else
                     {
