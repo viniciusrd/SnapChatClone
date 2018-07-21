@@ -59,9 +59,15 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         alertController.addAction(configGallery)
         present(alertController, animated: true, completion: nil);
         
+    }
+    
+    // clicar fora do teclado e fechar o teclado
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        view.endEditing(true);
         
     }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -140,26 +146,6 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                                 
                             }
                         })
-//                        images.downloadURL(completion: { (url, error) in
-//                            if error == nil
-//                            {
-//
-//
-//                                let urlFile = url?.absoluteString;
-//                                self.performSegue(withIdentifier: "selectUserSegue", sender: urlFile);
-//                                self.configButtonUpload(enable: true);
-//
-//                                //teste
-//                                print("URL: \(String(describing: urlFile))");
-//                            }
-//                            else
-//                            {
-//                                let alert = Alert(title: "Falha", message: "Falha ao obter a URL do arquivo salvo, tente novamente!");
-//                                self.present(alert.getAlert(), animated: true, completion: nil)
-//                                print("Erro: \(error?.localizedDescription)");
-//
-//                            }
-//                        })
                     }
                     else
                     {

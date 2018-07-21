@@ -34,6 +34,13 @@ class CreateAccountViewController: UIViewController {
         self.navigationController?.setToolbarHidden(false, animated: false);
     }
     
+    // clicar fora do teclado e fechar o teclado
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        view.endEditing(true);
+        
+    }
+    
     func showMessage(title: String, message: String){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert);
@@ -52,7 +59,6 @@ class CreateAccountViewController: UIViewController {
         if let getEmail = self.email.text
         {
             if let getName = name.text
-                
             {
                 if let getPassword = self.password.text
                 {
@@ -119,14 +125,14 @@ class CreateAccountViewController: UIViewController {
                                 self.showMessage(title: "Dados Incorretos", message: "As senhas estão diferentes, digite novamente!")
                             }//fim valida senha
                         }
-                        else
-                        {
-                            self.showMessage(title: "Dados Incorretos", message: "Informe seu nome!")
-                        }
+                        
                     }
                 }
+            }// fim nome
+            else
+            {
+                self.showMessage(title: "Dados Incorretos", message: "Informe seu nome!")
             }
-            
         }
         
     }
