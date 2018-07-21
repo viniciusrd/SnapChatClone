@@ -18,6 +18,7 @@
 		9805F70220F842EA00F51F50 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */; };
 		9821B1FF20FEBEA4004F5189 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B1FE20FEBEA4004F5189 /* UsersViewController.swift */; };
 		98808F742100090800D0402C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98808F732100090800D0402C /* User.swift */; };
+		98B6B92221036E6500587F19 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6B92121036E6500587F19 /* Snap.swift */; };
 		98E4F25C20FA707400BAA4B9 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */; };
 		98E4F25E20FA709900BAA4B9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */; };
 		98F9611020FADE1200A42C00 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F9610F20FADE1200A42C00 /* Alert.swift */; };
@@ -36,6 +37,7 @@
 		9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9821B1FE20FEBEA4004F5189 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		98808F732100090800D0402C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		98B6B92121036E6500587F19 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		98F9610F20FADE1200A42C00 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				98F9610F20FADE1200A42C00 /* Alert.swift */,
 				98808F732100090800D0402C /* User.swift */,
+				98B6B92121036E6500587F19 /* Snap.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E4F25C20FA707400BAA4B9 /* SnapsViewController.swift in Sources */,
+				98B6B92221036E6500587F19 /* Snap.swift in Sources */,
 				9805F70220F842EA00F51F50 /* CreateAccountViewController.swift in Sources */,
 				9805F70020F842CF00F51F50 /* LoginViewController.swift in Sources */,
 				9805F6EE20F8394200F51F50 /* ViewController.swift in Sources */,

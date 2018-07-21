@@ -46,7 +46,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qY8-aa-UMf" kind="show" id="BXO-5n-2f6"/>
+                                    <segue destination="qY8-aa-UMf" kind="show" id="BNR-4q-GaD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Iu-al-AhE">
@@ -60,7 +60,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="asM-AA-31F" kind="show" id="htb-nx-3ee"/>
+                                    <segue destination="asM-AA-31F" kind="show" identifier="showCreateAccountSegue" id="htb-nx-3ee"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,14 +156,13 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="0d9-Ju-Gst" id="BLQ-U5-qIH"/>
-                        <outlet property="login" destination="lBv-tu-avr" id="deM-xi-kfc"/>
                         <outlet property="password" destination="2iP-mn-qRa" id="TKY-F9-CeP"/>
                         <segue destination="TYh-Ob-cza" kind="presentation" identifier="loginSegue" id="Omc-WW-98d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN7-0e-hLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="-326"/>
+            <point key="canvasLocation" x="1709" y="-630"/>
         </scene>
         <!--Snaps-->
         <scene sceneID="lfE-uy-0Cy">
@@ -172,7 +171,33 @@
                     <view key="view" contentMode="scaleToFill" id="XcY-is-3Md">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Lc-Fb-PDC">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSnap" id="Y7E-r3-9dv">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y7E-r3-9dv" id="pmh-bV-IxZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="u7T-2r-6ma" id="8At-iG-lMn"/>
+                                    <outlet property="delegate" destination="u7T-2r-6ma" id="iJe-JX-1qj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Lc-Fb-PDC" firstAttribute="leading" secondItem="w1y-ic-QOT" secondAttribute="leading" id="Kep-UR-JrT"/>
+                            <constraint firstItem="2Lc-Fb-PDC" firstAttribute="top" secondItem="w1y-ic-QOT" secondAttribute="top" id="MZs-WL-Oer"/>
+                            <constraint firstItem="2Lc-Fb-PDC" firstAttribute="trailing" secondItem="w1y-ic-QOT" secondAttribute="trailing" id="iDh-On-OsK"/>
+                            <constraint firstItem="2Lc-Fb-PDC" firstAttribute="bottom" secondItem="w1y-ic-QOT" secondAttribute="bottom" id="jYt-s2-DiW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="w1y-ic-QOT"/>
                     </view>
                     <navigationItem key="navigationItem" title="Snaps" id="Qv6-2f-LpA">
@@ -181,12 +206,15 @@
                                 <action selector="loggof:" destination="u7T-2r-6ma" id="2Up-6J-8ka"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="0Vq-2Y-UEb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Vq-2Y-UEb">
                             <connections>
                                 <segue destination="ZZR-ab-7Ux" kind="show" id="GFJ-6Q-QtZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="2Lc-Fb-PDC" id="YXA-tG-QX8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ku-k0-ZoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -256,7 +284,7 @@
             </objects>
             <point key="canvasLocation" x="4704.375" y="21.12676056338028"/>
         </scene>
-        <!--Users View Controller-->
+        <!--Usuários-->
         <scene sceneID="kID-Jt-Glt">
             <objects>
                 <tableViewController id="xBt-RP-TZx" customClass="UsersViewController" customModule="SnapChat_Clone" customModuleProvider="target" sceneMemberID="viewController">
@@ -295,6 +323,7 @@
                             <outlet property="delegate" destination="xBt-RP-TZx" id="65e-wg-a8l"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Usuários" id="CyK-rb-igA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tun-Ji-5nK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,6 +479,6 @@
         <image name="picture" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hFK-BH-Xw9"/>
+        <segue reference="Omc-WW-98d"/>
     </inferredMetricsTieBreakers>
 </document>

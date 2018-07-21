@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("passou no viewDidLoad Login")
         // Do any additional setup after loading the view.
     }
 
