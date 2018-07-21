@@ -162,12 +162,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN7-0e-hLX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709" y="-630"/>
+            <point key="canvasLocation" x="2008" y="-402"/>
         </scene>
         <!--Snaps-->
         <scene sceneID="lfE-uy-0Cy">
             <objects>
-                <viewController id="u7T-2r-6ma" customClass="SnapsViewController" customModule="SnapChat_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="u7T-2r-6ma" customClass="SnapsViewController" customModule="SnapChat_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XcY-is-3Md">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,11 +214,66 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2Lc-Fb-PDC" id="YXA-tG-QX8"/>
+                        <segue destination="y7L-cS-UZt" kind="presentation" identifier="detailsSnapSegue" id="fvm-Hx-nSi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ku-k0-ZoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3931.875" y="13.732394366197184"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="jjK-ic-d2l">
+            <objects>
+                <viewController id="y7L-cS-UZt" customClass="DetailsViewController" customModule="SnapChat_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="le9-cd-pAA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mmp-eS-sHk">
+                                <rect key="frame" x="0.0" y="28" width="320" height="214.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScU-aM-t7l">
+                                <rect key="frame" x="0.0" y="250.5" width="320" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="nTE-Ve-Wbd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfR-N6-B8s">
+                                <rect key="frame" x="8" y="416" width="304" height="144"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W90-ed-RLZ" firstAttribute="trailing" secondItem="Mmp-eS-sHk" secondAttribute="trailing" id="0yJ-OK-UI8"/>
+                            <constraint firstItem="ScU-aM-t7l" firstAttribute="centerX" secondItem="le9-cd-pAA" secondAttribute="centerX" id="3Bb-P8-In1"/>
+                            <constraint firstItem="W90-ed-RLZ" firstAttribute="bottom" secondItem="jfR-N6-B8s" secondAttribute="bottom" constant="8" id="Ags-GB-sby"/>
+                            <constraint firstItem="jfR-N6-B8s" firstAttribute="leading" secondItem="W90-ed-RLZ" secondAttribute="leading" constant="8" id="CGs-qS-yod"/>
+                            <constraint firstItem="W90-ed-RLZ" firstAttribute="trailing" secondItem="ScU-aM-t7l" secondAttribute="trailing" id="CI2-b6-f6P"/>
+                            <constraint firstItem="Mmp-eS-sHk" firstAttribute="leading" secondItem="W90-ed-RLZ" secondAttribute="leading" id="NBT-Lu-XOt"/>
+                            <constraint firstItem="ScU-aM-t7l" firstAttribute="top" secondItem="Mmp-eS-sHk" secondAttribute="bottom" constant="8" id="Ta8-eN-4cZ"/>
+                            <constraint firstItem="Mmp-eS-sHk" firstAttribute="top" secondItem="W90-ed-RLZ" secondAttribute="top" constant="8" id="XBN-8I-BT1"/>
+                            <constraint firstItem="ScU-aM-t7l" firstAttribute="centerY" secondItem="le9-cd-pAA" secondAttribute="centerY" id="dNb-Vj-opJ"/>
+                            <constraint firstItem="ScU-aM-t7l" firstAttribute="top" secondItem="Mmp-eS-sHk" secondAttribute="bottom" constant="8" id="nAr-5D-DGc"/>
+                            <constraint firstItem="ScU-aM-t7l" firstAttribute="leading" secondItem="W90-ed-RLZ" secondAttribute="leading" id="vH6-Kr-2Bx"/>
+                            <constraint firstItem="W90-ed-RLZ" firstAttribute="trailing" secondItem="jfR-N6-B8s" secondAttribute="trailing" constant="8" id="xmN-vo-myU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W90-ed-RLZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="countTime" destination="jfR-N6-B8s" id="GGo-HY-tlj"/>
+                        <outlet property="detailsSnap" destination="ScU-aM-t7l" id="TiU-ah-Lcr"/>
+                        <outlet property="imageSnap" destination="Mmp-eS-sHk" id="S7l-lR-Fqx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mo2-j9-TZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3459.375" y="811.26760563380287"/>
         </scene>
         <!--Photos-->
         <scene sceneID="ukk-cU-HGP">

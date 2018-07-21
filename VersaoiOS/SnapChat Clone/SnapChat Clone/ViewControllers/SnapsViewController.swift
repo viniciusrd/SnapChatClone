@@ -46,8 +46,25 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 self.snaps.append(snapForUserLogged);
                 self.tableView.reloadData();
-                
             }
+            
+            //Adicionar evento para intem removido
+            snaps.observe(DataEventType.childRemoved) { (snapshot) in
+                
+                print(snapshot);
+                var index = 0;
+                for snap in self.snaps{
+                    print("atual index: "+String(index))
+                    if snap.id == snapshot.key {
+                        self.snaps.remove(at: index);
+                        print("Removed: "+snap.id)
+                    }
+                    index += 1;
+                }
+                
+                self.tableView.reloadData();
+            }
+            
             
         }
         
@@ -112,6 +129,30 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         return cell;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let total = snaps.count;
+        
+        if total > 0 {
+            
+            let snap = self.snaps[indexPath.row];
+            self.performSegue(withIdentifier: "detailsSnapSegue", sender: snap);
+        }
+    }
+    
+    // envia o objeto para uma viewcontroller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "detailsSnapSegue"{
+            
+            let detailsSnapViewController = segue.destination as! DetailsViewController;
+            
+            detailsSnapViewController.snapReceived = sender as! Snap;
+            
+        }
+        
     }
     
 }

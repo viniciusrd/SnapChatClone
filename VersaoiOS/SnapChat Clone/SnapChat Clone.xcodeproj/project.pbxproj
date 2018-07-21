@@ -18,6 +18,7 @@
 		9805F70220F842EA00F51F50 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */; };
 		9821B1FF20FEBEA4004F5189 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821B1FE20FEBEA4004F5189 /* UsersViewController.swift */; };
 		98808F742100090800D0402C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98808F732100090800D0402C /* User.swift */; };
+		989D249821039A2F008DE13E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D249721039A2F008DE13E /* DetailsViewController.swift */; };
 		98B6B92221036E6500587F19 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B6B92121036E6500587F19 /* Snap.swift */; };
 		98E4F25C20FA707400BAA4B9 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */; };
 		98E4F25E20FA709900BAA4B9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */; };
@@ -37,6 +38,7 @@
 		9805F70120F842EA00F51F50 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9821B1FE20FEBEA4004F5189 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		98808F732100090800D0402C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		989D249721039A2F008DE13E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		98B6B92121036E6500587F19 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				98E4F25B20FA707400BAA4B9 /* SnapsViewController.swift */,
 				98E4F25D20FA709900BAA4B9 /* PhotoViewController.swift */,
 				9821B1FE20FEBEA4004F5189 /* UsersViewController.swift */,
+				989D249721039A2F008DE13E /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SnapChat Clone/Pods-SnapChat Clone-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -235,6 +239,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -253,6 +258,7 @@
 				98E4F25C20FA707400BAA4B9 /* SnapsViewController.swift in Sources */,
 				98B6B92221036E6500587F19 /* Snap.swift in Sources */,
 				9805F70220F842EA00F51F50 /* CreateAccountViewController.swift in Sources */,
+				989D249821039A2F008DE13E /* DetailsViewController.swift in Sources */,
 				9805F70020F842CF00F51F50 /* LoginViewController.swift in Sources */,
 				9805F6EE20F8394200F51F50 /* ViewController.swift in Sources */,
 				9805F6EC20F8394200F51F50 /* AppDelegate.swift in Sources */,
