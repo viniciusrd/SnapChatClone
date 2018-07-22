@@ -61,7 +61,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     private void initFindViewByIds() {
         mFieldEmailLogin = findViewById(R.id.textFieldEmailLogin);
-        mFieldName = findViewById(R.id.textFieldName);
+        mFieldName = findViewById(R.id.textFieldPassword);
         mFieldPassword = findViewById(R.id.textFieldPassword);
         mFieldConfirmPassword = findViewById(R.id.textFieldConfirmPassword);
         mButtonCreateAccount = findViewById(R.id.buttonCreate);
@@ -94,12 +94,12 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         if(confirmPassword.isEmpty()) {
 
-            Toast.makeText(this,"Informe sua senha",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Informe sua confirmação de senha",Toast.LENGTH_LONG).show();
             return  false;
         }
 
         if(!password.equals(confirmPassword)){
-            Toast.makeText(this,"Informe sua senha",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Confirme sua senha corretamente",Toast.LENGTH_LONG).show();
             return  false;
         }
         return true;
@@ -109,7 +109,8 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         if(validateFields()){
 
-            this.mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            this.mAuth.createUserWithEmailAndPassword(email,password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -147,6 +148,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     private void showSnapActivity() {
         Intent intent = new Intent(this,SnapsActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
 
