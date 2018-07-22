@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">SnapChat Clone</string>
+
+    <!-- Botoes -->
+    <string name="hint_button_login">Entrar</string>
+    <string name="hint_create_account">Criar Conta</string>
+
+
+    <!-- Hints -->
+    <string name="hint_login">E-mail</string>
+    <string name="hint_password">Senha</string>
+    <string name="hint_password_confirm">Confirmar Senha</string>
+    <string name="hint_name">Nome</string>
+
+
 </resources>

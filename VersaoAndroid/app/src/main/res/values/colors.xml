@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#FFFB00</color>
+    <color name="colorPrimaryDark">#d6c10d</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="MainActivity">#FFFB00</color>
+    <color name="MainActivity1">#d6c10d</color>
+
+    <!--Cor botoes -->
+    <color name="buttonLogin">#F22756</color>
+    <color name="buttonCreateAccount">#14A1D9</color>
+    <color name="buttonLogar">#8D5EBF</color>
+    <color name="textButtonDefault">#FFF</color>
+
+
+
 </resources>
