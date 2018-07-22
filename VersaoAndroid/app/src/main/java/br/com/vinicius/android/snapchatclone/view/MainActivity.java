@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import br.com.vinicius.android.snapchatclone.R;
 
 public class MainActivity extends AppCompatActivity{
@@ -14,6 +17,9 @@ public class MainActivity extends AppCompatActivity{
     Button mButtonLogin;
     Button mButtonCreateAccount;
 
+    //Firebase
+    private FirebaseUser mUser;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,22 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+
+        mAuth = FirebaseAuth.getInstance();
+        this.mUser = this.mAuth.getCurrentUser();
+
+        if(mUser!=null){
+            showSnapsActivity();
+        }
+
+
+    }
+
+    private void showSnapsActivity() {
+
+        Log.d("showSnapsActivity","onclick");
+        Intent intent = new Intent(this,SnapsActivity.class);
+        startActivity(intent);
     }
 
     public void showLogin()

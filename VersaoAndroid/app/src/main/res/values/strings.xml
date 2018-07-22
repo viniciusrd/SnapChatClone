@@ -4,6 +4,7 @@
     <!-- Botoes -->
     <string name="hint_button_login">Entrar</string>
     <string name="hint_create_account">Criar Conta</string>
+    <string name="hint_next">Próximo</string>
 
 
     <!-- Hints -->
@@ -11,6 +12,10 @@
     <string name="hint_password">Senha</string>
     <string name="hint_password_confirm">Confirmar Senha</string>
     <string name="hint_name">Nome</string>
+
+
+    <!-- Activitys-->
+    <string name="title_snaps">Snaps</string>
 
 
 </resources>
