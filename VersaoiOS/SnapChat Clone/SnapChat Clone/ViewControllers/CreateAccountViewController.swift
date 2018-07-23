@@ -83,7 +83,7 @@ class CreateAccountViewController: UIViewController {
                                             let database = Database.database().reference();
                                             let users = database.child("usuarios");
                                             let getUser = user?.user;
-                                            let dataUser = ["name:":getName,"email":getEmail];
+                                            let dataUser = ["name":getName,"email":getEmail];
                                             users.child( getUser!.uid ).setValue(dataUser);
                                             
                                             //tudo ok redirecionar para a tela principal

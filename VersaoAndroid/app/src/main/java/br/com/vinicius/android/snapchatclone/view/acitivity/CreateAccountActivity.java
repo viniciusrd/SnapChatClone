@@ -1,4 +1,4 @@
-package br.com.vinicius.android.snapchatclone.view;
+package br.com.vinicius.android.snapchatclone.view.acitivity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -140,7 +140,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     private void saveUserDatabase() {
 
         this.mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("usuarios").child(mUser.getUid()).child("name:").setValue(name);
+        mDatabase.child("usuarios").child(mUser.getUid()).child("name").setValue(name);
         mDatabase.child("usuarios").child(mUser.getUid()).child("email").setValue(email);
 
     }

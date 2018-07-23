@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.vinicius.android.snapchatclone">
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,11 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".view.SnapsActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".view.LoginActivity" />
+            android:name=".view.acitivity.SnapsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.acitivity.LoginActivity" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.acitivity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,8 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.CreateAccountActivity" />
-        <activity android:name=".view.PhotoActivity"></activity>
+        <activity android:name=".view.acitivity.CreateAccountActivity" />
+        <activity android:name=".view.acitivity.PhotoActivity" />
+        <activity android:name=".view.acitivity.UsersActivity"></activity>
     </application>
 
 </manifest>

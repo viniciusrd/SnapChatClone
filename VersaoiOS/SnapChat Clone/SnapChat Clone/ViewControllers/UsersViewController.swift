@@ -34,7 +34,7 @@ class UsersViewController: UITableViewController {
             let idUserLogged = auth.currentUser?.uid;
             
             let emailUser = datas!["email"] as! String;
-            let nameUser = datas!["name:"] as! String;
+            let nameUser = datas!["name"] as! String;
             let idUser = snapshot.key;
             
             let user = User(email: emailUser, name: nameUser, uid: idUser);
