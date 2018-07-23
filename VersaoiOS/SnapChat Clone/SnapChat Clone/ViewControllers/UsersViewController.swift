@@ -114,7 +114,7 @@ class UsersViewController: UITableViewController {
                 let dataSnaphot = snapshot.value as? NSDictionary;
                 let snapConfig = [
                     "from":dataSnaphot!["email"] as! String,
-                    "name":dataSnaphot!["name:"] as! String,
+                    "name":dataSnaphot!["name"] as! String,
                     "desc":self.descImage,
                     "urlImage":self.urlImage,
                     "idImage":self.idImage

@@ -1,4 +1,4 @@
-package br.com.vinicius.android.snapchatclone.view.adapter;
+package br.com.vinicius.android.snapchatclone.viewcontroller.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

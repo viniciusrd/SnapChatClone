@@ -1,4 +1,4 @@
-package br.com.vinicius.android.snapchatclone.view.acitivity;
+package br.com.vinicius.android.snapchatclone.viewcontroller.acitivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +19,7 @@ import java.util.List;
 import br.com.vinicius.android.snapchatclone.R;
 import br.com.vinicius.android.snapchatclone.model.Image;
 import br.com.vinicius.android.snapchatclone.model.User;
-import br.com.vinicius.android.snapchatclone.view.adapter.UserAdapter;
+import br.com.vinicius.android.snapchatclone.viewcontroller.adapter.UserAdapter;
 
 public class UsersActivity extends AppCompatActivity {
 

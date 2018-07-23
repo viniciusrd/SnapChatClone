@@ -15,11 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".view.acitivity.SnapsActivity"
+            android:name=".viewcontroller.acitivity.SnapsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".view.acitivity.LoginActivity" />
+        <activity android:name=".viewcontroller.acitivity.LoginActivity" />
         <activity
-            android:name=".view.acitivity.MainActivity"
+            android:name=".viewcontroller.acitivity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,9 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.acitivity.CreateAccountActivity" />
-        <activity android:name=".view.acitivity.PhotoActivity" />
-        <activity android:name=".view.acitivity.UsersActivity"></activity>
+        <activity android:name=".viewcontroller.acitivity.CreateAccountActivity" />
+        <activity android:name=".viewcontroller.acitivity.PhotoActivity" />
+        <activity android:name=".viewcontroller.acitivity.UsersActivity"></activity>
     </application>
 
 </manifest>
