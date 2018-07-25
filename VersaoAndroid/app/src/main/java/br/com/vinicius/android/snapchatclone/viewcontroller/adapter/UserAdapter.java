@@ -1,4 +1,4 @@
-package br.com.vinicius.android.snapchatclone.viewcontroller.adapter;
+package br.com.vinicius.android.snapchatclone.ViewController.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.vinicius.android.snapchatclone.R;
-import br.com.vinicius.android.snapchatclone.model.User;
+import br.com.vinicius.android.snapchatclone.Model.User;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserAdapterHolder>{
 

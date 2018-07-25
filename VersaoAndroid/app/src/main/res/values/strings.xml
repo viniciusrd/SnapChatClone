@@ -13,10 +13,13 @@
     <string name="hint_password">Senha</string>
     <string name="hint_password_confirm">Confirmar Senha</string>
     <string name="hint_name">Nome</string>
+    <string name="hint_snaps_empty">Você ainda não nenhum snap :(</string>
 
 
     <!-- Activitys-->
     <string name="title_snaps">Snaps</string>
+    <string name="title_photos">Photos</string>
+    <!--<string name="title_photos">Photos</string>-->
 
 
 </resources>

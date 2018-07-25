@@ -1,4 +1,4 @@
-package br.com.vinicius.android.snapchatclone.viewcontroller.acitivity;
+package br.com.vinicius.android.snapchatclone.ViewController.acitivity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

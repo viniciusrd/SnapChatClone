@@ -1,4 +1,4 @@
-package br.com.vinicius.android.snapchatclone.model;
+package br.com.vinicius.android.snapchatclone.Model;
 
 public class User {
 

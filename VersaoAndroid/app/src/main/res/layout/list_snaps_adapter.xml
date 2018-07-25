@@ -14,13 +14,6 @@
         android:text="Nome Usuario"
         android:textSize="24dp" />
 
-    <TextView
-        android:id="@+id/textEmailUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="email@mail.com"
-        android:textSize="18dp" />
 
     <View
         android:id="@+id/view"

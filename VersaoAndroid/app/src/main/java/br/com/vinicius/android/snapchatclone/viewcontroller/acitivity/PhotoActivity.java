@@ -1,4 +1,4 @@
-package br.com.vinicius.android.snapchatclone.viewcontroller.acitivity;
+package br.com.vinicius.android.snapchatclone.ViewController.acitivity;
 
 import android.Manifest;
 import android.app.Activity;
@@ -35,7 +35,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 import br.com.vinicius.android.snapchatclone.R;
-import br.com.vinicius.android.snapchatclone.model.Image;
+import br.com.vinicius.android.snapchatclone.Model.Image;
 
 public class PhotoActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_GALLERY = 1;
@@ -278,6 +278,7 @@ public class PhotoActivity extends AppCompatActivity {
         Intent intent = new Intent(this,UsersActivity.class);
         intent.putExtra("Snap", image);
         startActivity(intent);
+        finish();
 
     }
 
